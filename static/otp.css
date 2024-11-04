@@ -1,20 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+
 *{
     margin :0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
-}
-
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url('../static/logo/Logo\ JPG\ \(2\).png') no-repeat;
-    background-size: cover;
-    background-position: center ;
 }
 
 header {
@@ -86,6 +77,16 @@ margin-left: 40px;
     color:#162938;
 }
 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('Logo JPG (2).png') no-repeat;
+    background-size: cover;
+    background-position: center ;
+}
+
 .wrapper{
     position:relative;
     width: 450px;
@@ -99,8 +100,6 @@ margin-left: 40px;
     justify-content: center;
     align-items: center;
    overflow: hidden;
-   transition:transform .5s ease ,height .3s ease;
-   transform: scale(0);
 }
 
 .wrapper.active-popup{
@@ -127,18 +126,6 @@ margin-left: 40px;
     transform: translateX(-400px);
     
 }
-
-.wrapper .form-box.register{
-    position: absolute;
-    transform: translateX(400px);
-    transition: none ;
-}
-
-.wrapper.active .form-box.register{
-    transition: transform .18s ease;
-    transform: translateX(0);
-}
-
 .wrapper .icon-close{
     position: absolute;
     top: 0;
@@ -204,33 +191,6 @@ margin-left: 40px;
     color: #162938;
     line-height: 57px;
 }
-
-.remember-forgot {
-    font-size: .9em;
-    color:black;
-    font-weight: 500;
-    margin: -15px 0 15px ;
-    display: flex;
-     justify-content: space-between;
-}
-
-.remember-forgot label{
-    accent-color:black;
-    margin-right: 3px;
-}
-
-.remember-forgot a{
-    color: black;
-    text-decoration: none;
-    font-weight: 700; 
-
-}
-
-.remember-forgot a:hover{
-    text-decoration: underline ;
-
-}
-
 .btn{
     width: 100%;
     height: 45px;
@@ -263,4 +223,3 @@ margin-left: 40px;
 .login-register p a:hover{
     text-decoration: underline;
 }
-

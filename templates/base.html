@@ -3,23 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/base.css">
     <title>{% block title %} News Fusion {% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    {% block head %}
+    {% endblock %} 
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+    <!-- Bangers Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <!-- poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Home - NewsFusion</title>
+    <!-- lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Merriweather -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- Pairflay display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1 class="Logo">News Fusion</h1>
-        <nav class="navigation">
-            <a href="{{ url_for('home') }}">Home</a>
-            <a href="{{ url_for('bookmarks') }}">Bookmarks</a>
+    <nav class="navigation">
+        <a href="#"><h1>NewsFusion</h1></a>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <ul class="nav-links" id="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('bookmarks') }}">Bookmarks</a></li>
+            <!-- <li><a href="#">My-Account</a></li> -->
             {% if 'username' in session %}
-                <a href="{{ url_for('logout') }}">Logout</a>
+                <li><a href="{{ url_for('logout') }}">LogOut</a></li>
             {% else %}
-                <a href="{{ url_for('login') }}">Login</a>
-                <a href="{{ url_for('register') }}">Register</a>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><li><a href="{{ url_for('register') }}">Register</a></li></li>
             {% endif %}
-        </nav>
-    </header>
+        </ul>
+    </nav>
     <div class="container">
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
@@ -30,5 +73,26 @@
         {% endwith %}
         {% block content %} {% endblock %}
     </div>
+
+    <footer>
+        <div class="social-icons">
+            <img src="../static/social-icons/icons8-facebook.svg" alt="Facebook" class="social-icons">
+            <img src="../static/social-icons/icons8-instagram.svg" alt="Facebook" class="social-icons">
+            <img src="../static/social-icons/icons8-twitter.svg" alt="Facebook" class="social-icons">
+            <img src="../static/social-icons/icons8-youtube.svg" alt="Facebook" class="social-icons">
+        </div>
+
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="">Categories</a>
+            <a href="#">My-Account</a>
+        </div>
+
+        <div class="copy">
+            @NewsFusion - 2024
+        </div>
+    </footer>
+    <script src="../static/base.js"></script>
 </body>
 </html>

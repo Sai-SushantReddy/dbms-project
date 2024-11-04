@@ -1,0 +1,176 @@
+/* Basic styling */
+body {
+    background-color: #f7f7f7;
+    margin: 0 auto;
+}
+
+/* Navbar Styling */
+nav {
+    background-color: white;
+    display: flex;
+    font-size: 85%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    transition: all 0.3s ease-out;
+    font-family: "Montserrat", sans-serif;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+nav a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Nav Links - Hidden by Default (Mobile View) */
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    padding: 1rem;
+}
+
+nav h1 {
+    font-family: "Audiowide", sans-serif;
+}
+
+.nav-links li {
+    margin: 10px 0;
+}
+
+.nav-links.active {
+    display: flex;
+    background-color: white;
+}
+
+/* List Items */
+li {
+    list-style-type: none;
+    display: inline;
+    margin: 0.2rem;
+}
+
+/* Hover effect for list items */
+.nav-links li a {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #007bff;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+/* Hamburger Icon - Shown by Default */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 0.2rem;
+}
+
+.hamburger span {
+    width: 2rem;
+    height: 0.2rem;
+    background-color: black;
+    transition: 0.3s;
+}
+
+/* Footer Styling */
+footer {
+    background-color: black;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Playfair Display", serif;
+    font-size: 75%;
+}
+
+.social-icons{
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Social Icons Hover Effect */
+.social-icons img {
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0.75rem;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.copy {
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin: 0.5rem;
+}
+
+/* Media Query for Larger Screens (Desktop View) */
+@media (min-width: 768px) {
+    /* nav bar styling */
+    nav {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    /* Hide Hamburger Icon on Desktop */
+    .hamburger {
+        display: none;
+    }
+
+    body {
+        font-size: 125%;
+    }
+
+    /* Show Nav Links Horizontally */
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        gap: 20px;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

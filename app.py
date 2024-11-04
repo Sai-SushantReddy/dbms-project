@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.secret_key = 'secretkey123'  
 
-app.config['SQLALCHEMY_DATABASE_URI'] = ''
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:OwpBFgzFnFWbqCNYiGdjYehiIveErrcn@autorack.proxy.rlwy.net:29166/railway'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  
 
 db = SQLAlchemy(app)
@@ -23,12 +23,9 @@ class Post(db.Model):
     src = db.Column(db.String(255), nullable=False)
     content = db.Column(db.Text, nullable=False)
     title = db.Column(db.String(100), nullable=False)
-    tags = db.Column(db.String(255))
     caption = db.Column(db.Text)
     like_count = db.Column(db.Integer, default=0)
     timestamp = db.Column(db.DateTime, server_default=db.func.current_timestamp())
-    fk_username = db.Column(db.String(50), db.ForeignKey('users1.username'))  # Reference to user1
-    view_count = db.Column(db.Integer, default=0)
     category = db.Column(db.String(50))
 
 class Comment(db.Model):
@@ -157,3 +154,4 @@ if __name__ == "__main__":
     with app.app_context():  
         db.create_all()  
     app.run(debug=True)
+    
