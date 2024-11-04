@@ -1,15 +1,14 @@
   {% extends 'base.html' %}
 
 {% block title %} Post Detail | NewsFusion {% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='post_detail.css') }}">
+{% endblock %} 
 
 {% block content %}
     <h2>{{ post.title }}</h2>
+    <img src={{post.src}} alt="Post Image" class="post-img">
     <p>{{ post.content }}</p>
     <p>Likes: {{ post.like_count }}</p>
-    <form action="{{ url_for('report', postid=post.postid) }}" method="POST">
-        <textarea name="reason" placeholder="Reason for reporting"></textarea>
-        <button type="submit">Report Post</button>
-    </form>
     <h3>Comments</h3>
     <form action="{{ url_for('post_detail', postid=post.postid) }}" method="POST">
         <textarea name="comment_content" placeholder="Add a comment"></textarea>
@@ -20,5 +19,9 @@
             <p><strong>{{ comment.fk_username }}:</strong> {{ comment.comment_content }}</p>
         </div>
     {% endfor %}
+    <form action="{{ url_for('report', postid=post.postid) }}" method="POST">
+        <textarea name="reason" placeholder="Reason for reporting"></textarea>
+        <button type="submit" class="report-button">Report Post</button>
+    </form>
 {% endblock %}
 

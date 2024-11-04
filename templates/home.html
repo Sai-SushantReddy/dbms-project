@@ -8,23 +8,31 @@
 
 {% block content %}
 
-    <div class="container">
-        <h2 class="posts-title">Welcome to NewsFusion</h2>
-        <p>Your source for the latest posts.</p>
-        {% for post in posts%}
-            <div class="card">
-                <div class="card-content">
-                    <h2 class="card-title">{{ post.title }}</h2>
-                    <p class="card-text">{{ post.caption }}</p>
-                    <form action="{{ url_for('like', postid=post.postid) }}" method="POST">
-                        <button type="submit" name="like">Like ({{ post.like_count }})</button></form>
-                    <form action="{{ url_for('bookmark', postid=post.postid) }}" method="POST">
-                            <button type="submit" name="bookmark">Bookmark</button>
+<div class="container">
+    <h2 class="posts-title">Welcome to NewsFusion</h2>
+    <p class="card-text">Your source for the latest posts.</p>
+    {% for post in posts %}
+        <div class="card">
+            <div class="card-content">
+                <h2 class="card-title">{{ post.title }}</h2>
+                <p class="card-text">{{ post.caption }}</p>
+                <div class="options">
+                    <div class="button-container">
+                        <form action="{{ url_for('like', postid=post.postid) }}" method="POST">
+                            <button type="submit" name="like" class="like-button"><ion-icon name="heart"></ion-icon> {{ post.like_count }}</button>
                         </form>
-                    <a href="{{ url_for('post_detail', postid=post.postid) }}" class="card-button"><button>Read More</button></a>
+                        <form action="{{ url_for('bookmark', postid=post.postid) }}" method="POST">
+                            <button type="submit" name="bookmark" class="bookmark-button"><ion-icon name="bookmark"></ion-icon></button>
+                        </form>
+                    </div>
+                    <a href="{{ url_for('post_detail', postid=post.postid) }}" class="card-button">
+                        <button>Read More</button>
+                    </a>
                 </div>
-                <img src="{{post.src}}" alt="the image" class="card-img">
             </div>
-        {% endfor %}
-    </div>
+            <img src="{{ post.src }}" alt="the image" class="card-img">
+        </div>
+    {% endfor %}
+</div>
+
 {% endblock %}

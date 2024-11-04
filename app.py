@@ -102,6 +102,9 @@ def post_detail(postid):
 def like(postid):
     if 'username' in session:
         post = Post.query.get(postid)
+        
+    else: 
+        flash("Login to like posts.", "warning")
     if post:
         # Check if the user has already liked this post
         existing_like = Like.query.filter_by(fk_postid=postid, fk_username=session['username']).first()

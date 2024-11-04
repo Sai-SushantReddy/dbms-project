@@ -2,6 +2,7 @@
 body {
     background-color: #f7f7f7;
     margin: 0 auto;
+    font-size: 75%;
 }
 
 /* Navbar Styling */
@@ -172,5 +173,61 @@ footer {
     footer {
         flex-direction: row;
         justify-content: space-between;
+    }
+}
+
+.container {
+    font-family: "Lato", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    max-width: 600px; /* Center container with max width */
+    margin: auto; /* Center the container */
+}
+
+/* Flash message styles */
+.alert {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: black; /* White text for visibility */
+}
+
+/* Flash message categories */
+.alert-success {
+    background-color: #28a745; /* Green for success */
+}
+
+.alert-error {
+    background-color: #dc3545; /* Red for error */
+}
+
+.alert.fade-out {
+    opacity: 0; /* Fade out */
+    visibility: hidden; /* Hide after fade out */
+}
+
+.alert-warning {
+    background-color: #ffc107; /* Yellow for warning */
+}
+
+.alert-info {
+    background-color: #17a2b8; /* Blue for info */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .alert {
+        font-size: 0.9rem; /* Slightly smaller text on mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    .alert {
+        font-size: 1rem; /* Normal text size for larger screens */
     }
 }

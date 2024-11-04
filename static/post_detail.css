@@ -1,0 +1,112 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    color: black;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.post-img{
+    border-radius: 16px;
+    width: 100%;
+    margin: 1rem;
+    align-items: center;
+}
+
+/* Header Styles */
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Post Content */
+p {
+    margin-bottom: 1rem;
+    font-family: "Montserrat", sans-serif;
+    text-align: justify;
+}
+
+/* Form Styles */
+form {
+    margin-bottom: 2rem;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+button {
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: gray;
+}
+
+/* Comments Section */
+h3 {
+    margin: 1.5rem 0;
+}
+
+.report-button{
+    background-color: red;
+}
+
+.comment {
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.comment p {
+    margin: 0.5rem 0;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    button {
+        padding: 0.75rem 1.5rem;
+    }
+
+    textarea {
+        height: 120px; /* Adjust height for larger screens */
+    }
+
+    .comment {
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+    }
+}

@@ -49,8 +49,17 @@
 }
 
 /* Card Content Text Styling */
+.card-title{
+    line-height: 99%;
+}
+
 .card-text {
-    font-family: "Roboto", sans-serif;
+    font-family: "Montserrat", sans-serif;
+}
+
+.options{
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Button Styling */
@@ -87,4 +96,40 @@
     .card {
         width: 750px;
     }
+}
+
+.like-img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; 
+    overflow: hidden;
+}
+
+/* Button Styling */
+.like-button, .bookmark-button {
+    background-color: #1bf67a; /* Bootstrap primary color */
+    color: black;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0.5rem; /* Adds space around buttons */
+}
+
+/* Button Hover Effect */
+.like-button:hover, .bookmark-button:hover {
+    background-color: #218a3b; /* Darker shade for hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Additional styles for visual separation */
+.button-container {
+    display: flex;
+    gap: 1rem; /* Space out the buttons */
+    width: 100%; /* Make buttons take full width */
 }
